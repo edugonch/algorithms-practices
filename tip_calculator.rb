@@ -7,11 +7,11 @@
 # The tip is $30.00
 # The total is $230.00
 
-class TipcCalculator
+class TipCalculator
     attr_accessor :tip_percent, :bill
     attr_reader :tip, :total
     
-    def initialize(bill, tip_percent)
+    def initialize(bill=0, tip_percent=0)
         @tip = 0
         @bill = bill
         @tip_percent = tip_percent
@@ -19,19 +19,7 @@ class TipcCalculator
     end
     
     def calculate_tip
-        puts "@tip_percent #{@tip_percent}"
-        @tip = @bill * (@tip_percent / 100)
+        @tip = @bill * (@tip_percent / 100.0)
         @total = @bill + @tip
     end
 end
-
-print "What is the bill? $"
-bill = gets.strip.to_f
-print "\nWhat is the tip percentage? "
-tip_percent = gets.strip.to_f
-
-tc = TipcCalculator.new(bill, tip_percent)
-tc.calculate_tip
-
-puts "The tip is $ #{tc.tip}"
-puts "The total is $ #{tc.total}"

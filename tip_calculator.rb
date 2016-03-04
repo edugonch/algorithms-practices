@@ -6,6 +6,7 @@
 # What is the tip percentage? 15
 # The tip is $30.00
 # The total is $230.00
+# Taken from: Exercise for programmers: 57 Challenges to Develop Your Code Skills
 
 class TipCalculator
     attr_accessor :tip_percent, :bill
